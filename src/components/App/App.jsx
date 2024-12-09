@@ -1,11 +1,21 @@
-import PlaceholderComponent1 from "../PlaceholderComponent1/PlaceholderComponent1"
+import CalendarGrid from '../CalendarGrid/CalendarGrid';
+import DayCard from '../DayCard/DayCard';
 
 function App() {
+  //TODO: conditional rendering: replace <CalendarGrid> with loading component when in loading state
   return (
     <>
-      <PlaceholderComponent1>Hello world</PlaceholderComponent1>
+      <main>
+        <CalendarGrid>
+          {Array(24)
+            .fill(undefined)
+            .map((val, index) => (
+              <DayCard key={index} dayNumber={index + 1} />
+            ))}
+        </CalendarGrid>
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
