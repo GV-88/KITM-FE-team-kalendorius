@@ -15,7 +15,7 @@ const CalendarDay = ({ day, isOpened }) => {
             dispatch(openDay(day));
             setShowModal(true);
         } else if (isOpened) {
-            setShowModal(true);
+            setShowModal(false);
         }
     };
 
