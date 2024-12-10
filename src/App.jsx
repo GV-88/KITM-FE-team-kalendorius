@@ -8,7 +8,7 @@ const App = () => {
       <h1>Kiekvieną dieną atidarykite duris ir galite laimėti nuostabų prizą iš vieno iš mūsų verslo partnerių.</h1>
       <h1>Sėkmės!</h1>
       <CalendarGrid />
-      <footer>Aurelijus, Gytis, Šarūnas © 2024 Advento Kalendorius Valdymo Sistema</footer>
+      <footer>Aurelijus, Deividas, Gytis, Šarūnas © 2024 Advento Kalendorius Valdymo Sistema</footer>
     </div>
   );
 };
