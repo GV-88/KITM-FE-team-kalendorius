@@ -25,21 +25,21 @@ body {
     font-size: 25px;
     margin: 10px 0;
 
-		@media (max-width: 1300px) {
-			font-size: 22px;
+    @media (max-width: 1300px) {
+      font-size: 22px;
     }
 
-		@media (max-width: 1124px) {
+    @media (max-width: 1124px) {
       font-size: 18px;
     }
 
-		@media (max-width: 968px) {
+    @media (max-width: 968px) {
       font-size: 15px;
     }
 
-		@media (max-width: 768px) {
-			font-size: 12px;
-		}
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
 
     @media (max-width: 600px) {
       font-size: 10px;
@@ -61,101 +61,95 @@ body {
     padding: 0 250px;
     margin-top: 50px;
 
-	
-		@media (max-width: 1400px) {
-			padding: 0 150px; 
+    @media (max-width: 1400px) {
+      padding: 0 150px; 
     }
 
-		@media (max-width: 1200px) {
-			padding: 0 100px; 
+    @media (max-width: 1200px) {
+      padding: 0 100px; 
     }
 
-		@media (max-width: 1024px) {
+    @media (max-width: 1024px) {
       grid-template-columns: repeat(5, 1fr);
-			padding: 0 100px; 
+      padding: 0 100px; 
     }
 
-		@media (max-width: 768px) {
+    @media (max-width: 768px) {
       grid-template-columns: repeat(3, 1fr);
-			padding: 0 100px; 
+      padding: 0 100px; 
     }
 
     @media (max-width: 600px) {
       grid-template-columns: repeat(2, 1fr); 
-			padding: 0 100px;
+      padding: 0 100px;
     }
 
     .calendar-day {
       background-color: $card-color;
-      border: 3px solid #ffffff;
-      border-radius: 3px;
-      padding: 10px 10px 70px 0px;
-      text-align: right;
-      color: $text-color;
-      font-size: 18px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-
-
-			// papildyt icon png dar nesiruosia
-      .day-icon {
-        width: 20px; 
-        height: 20px;
-        margin-left: 5px; 
-        vertical-align: bottom;
-				float: left;
+    	border: 3px solid #ffffff;
+    	border-radius: 3px;
+    	padding: 10px 10px 70px 0px;
+    	text-align: right;
+    	color: $text-color;
+    	font-size: 18px;
+    	cursor: pointer;
+    	transition: background-color 0.3s;
+  
+      &.open {
+        background-color: #d24f4f;
       }
-
-      &.opened {
-        background-color: #fb5959;
-      }
+  
+      .patience-message {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: #888;
+				background: rgba(255, 255, 255, 0.8);
+				padding: 5px;
+				border-radius: 3px;
+			}
     }
-  }
 
-  .modal {
-    display: block;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.8);
+    .modal {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 80%;
+        text-align: center;
 
-    .modal-content {
-      background-color: #fefefe;
-      margin: 15% auto;
-      padding: 0 5px 20px 20px;
-      border: 2px solid $text-color;
-      border-radius: 8px;
-      width: 80%;
-      max-width: 550px;
-      font-size: 25px;
+				h3 {
+					color: #000000;
+				}
 
-      p {
-        text-align: left;
-        margin-top: 10px;
-        max-width: 535px;
-      }
-
-      .close {
-        color: #aaa;
-        float: right; // Corrected from 'top right'
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-
-        &:hover,
-        &:focus {
-          color: $text-color;
-          text-decoration: none;
+				p {
+					color: #000000;
+					text-align: left;
+					margin-top: 10px;
+					max-width: 535px;
+				}
+  
+        button {
+          margin-top: 10px;
+          padding: 5px 10px;
           cursor: pointer;
         }
       }
     }
   }
 
-	footer {
+  footer {
     display: block;
     text-align: center;
     margin-top: 60px;
@@ -206,11 +200,9 @@ body {
       margin-top: 50px;
       margin-bottom: 0;
 
-			@media (max-width: 768px) {
-				font-size: 12px; 
-			}
+      @media (max-width: 768px) {
+        font-size: 12px; 
+      }
     }
   }
 }
-
-

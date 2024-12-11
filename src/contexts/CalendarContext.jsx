@@ -1,11 +1,11 @@
-import { SET_LOADING, SET_TIPS } from "../actions/actions";
-import React from "react";
-import { useContext, useEffect, useReducer } from "react";
+import React, { useContext, useEffect, useReducer } from "react";
 import reducer from "../reducers/reducer";
+import { SET_LOADING, SET_TIPS, OPEN_DAY } from "../actions/actions";
 
 const initialState = {
   isLoading: true,
   adventTips: [],
+  openDay: JSON.parse(localStorage.getItem('openedDays')) || []
 };
 
 const JSON_LINK = "/src/adventTips.json";
@@ -33,8 +33,16 @@ const AppProvider = ({ children }) => {
     fetchStories(JSON_LINK);
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('openedDays', JSON.stringify(state.openDay));
+  }, [state.openDay]);
+
+  const openDayAction = (day) => {
+    dispatch({ type: OPEN_DAY, payload: day });
+  };
+
   return (
-    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state, openDayAction }}>{children}</AppContext.Provider>
   );
 };
 
