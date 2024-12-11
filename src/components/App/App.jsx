@@ -1,7 +1,7 @@
 import React from "react";
 import Calendar from "../calendar/Calendar";
-import AdventHeader from "../adventHeader/adventHeader";
-import AdventFooter from "../adventFooter/adventFooter";
+import AdventHeader from "../adventHeader/AdventHeader";
+import AdventFooter from "../adventFooter/AdventFooter";
 
 const App = () => {
   return (
