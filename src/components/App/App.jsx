@@ -1,14 +1,14 @@
-import React from 'react';
-import Calendar from '../calendar/Calendar';
-import AdventHeader from '../adventHeader/adventHeader';
-import AdventFooter from '../adventFooter/adventFooter';
+import React from "react";
+import Calendar from "../calendar/Calendar";
+import AdventHeader from "../adventHeader/adventHeader";
+import AdventFooter from "../adventFooter/adventFooter";
 
 const App = () => {
   return (
     <div className="App">
-      <AdventHeader/>
-      <Calendar/>
-			<AdventFooter/>
+      <AdventHeader />
+      <Calendar />
+      <AdventFooter />
     </div>
   );
 };
