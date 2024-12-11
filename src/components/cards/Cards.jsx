@@ -1,4 +1,4 @@
-import { useGlobalContext } from "../contexts/CalendarContext";
+import { useGlobalContext } from "../../contexts/CalendarContext";
 
 const Cards = () => {
 	const{isLoading, adventTips} = useGlobalContext();
