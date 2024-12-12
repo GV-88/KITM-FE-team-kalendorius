@@ -1,7 +1,9 @@
 import { useGlobalContext } from "../../contexts/CalendarContext";
+import { useThemeContext } from "../../contexts/ThemeContext";
 
-const Card = ({ day }) => {
+const Card = ({ day, iconSrc }) => {
   const { isOpenedFn, setOpenDayFn, today } = useGlobalContext();
+  const { isDarkMode } = useThemeContext();
 
   const classList = ["calendar-day"];
   if (day < today) {
@@ -12,10 +14,14 @@ const Card = ({ day }) => {
   if (isOpenedFn(day)) {
     classList.push("open");
   }
+  if (isDarkMode) {
+    classList.push("dark");
+  }
 
   return (
     <div className={classList.join(" ")} data-day={day} onClick={() => setOpenDayFn(day)}>
       {day}
+      <img src={iconSrc} alt={`Icon for day ${day}`} className="random-icon" />
     </div>
   );
 };

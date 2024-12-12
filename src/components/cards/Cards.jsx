@@ -27,9 +27,9 @@ const Cards = () => {
   useEffect(() => {
     const newIconMap = {};
     adventTips.forEach(({ day }) => {
-      if (day % 2 === 0) {
-        newIconMap[day] = icons[Math.floor(Math.random() * icons.length)];
-      }
+      // if (day % 2 === 0) {
+      newIconMap[day] = icons[Math.floor(Math.random() * icons.length)];
+      // }
     });
     setIconMap(newIconMap);
   }, [adventTips]);
@@ -40,14 +40,13 @@ const Cards = () => {
 
   const selectedAdvice = getOpenedDayAdviceFn();
 
-
   return (
     <div className={`calendar-grid-wrapper ${isDarkMode ? "dark-mode" : "light-mode"}`}>
       <div className="calendar-grid">
         {adventTips.map((gridItem) => {
           const day = gridItem.day;
-          //TODO: use isDarkMode within Card component
-          return <Card key={day} day={day} />;
+          //TODO: use isDarkMode and iconSrc within Card component
+          return <Card key={day} day={day} iconSrc={iconMap[day]} />;
         })}
       </div>
       {currentDayOpen && (
@@ -67,7 +66,6 @@ const Cards = () => {
           )}
         </div>
       )}
-
     </div>
   );
 };
