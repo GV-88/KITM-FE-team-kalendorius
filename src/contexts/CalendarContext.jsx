@@ -1,4 +1,4 @@
-import { SET_LOADING, SET_TIPS } from "../actions/actions";
+import { SET_LOADING, SET_TIPS, OPEN_DAY } from "../actions/actions"; // Pridėtas OPEN_DAY importas
 import React from "react";
 import { useContext, useEffect, useReducer } from "react";
 import reducer from "../reducers/reducer";
@@ -6,6 +6,7 @@ import reducer from "../reducers/reducer";
 const initialState = {
   isLoading: true,
   adventTips: [],
+  openDay: [], // Pridėta openDay savybė
 };
 
 const JSON_LINK = "/src/adventTips.json";
@@ -34,7 +35,7 @@ const AppProvider = ({ children }) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state, dispatch }}>{children}</AppContext.Provider>
   );
 };
 

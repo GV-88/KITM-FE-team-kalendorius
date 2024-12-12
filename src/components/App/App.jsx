@@ -1,15 +1,21 @@
 import React from "react";
-import Calendar from "../calendar/Calendar";
+import Calendar from "../Calendar/Calendar";
 import AdventHeader from "../adventHeader/AdventHeader";
 import AdventFooter from "../adventFooter/AdventFooter";
+import ThemeProvider from '../../contexts/ThemeContext';
+import { AppProvider } from "../../contexts/CalendarContext"; 
 
 const App = () => {
   return (
-    <div className="App">
-      <AdventHeader />
-      <Calendar />
-      <AdventFooter />
-    </div>
+    <ThemeProvider>
+      <AppProvider>
+        <div className="App">
+          <AdventHeader />
+          <Calendar />
+          <AdventFooter />
+        </div>
+      </AppProvider>
+    </ThemeProvider>
   );
 };
 

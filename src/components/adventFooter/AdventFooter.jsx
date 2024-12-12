@@ -27,7 +27,7 @@ const AdventFooter = () => {
             </div>
           </div>
         </div>
-        <h5>Deividas, Gytis, Šarūnas, Aurelijus © 2024 Advento Kalendorius Valdymo Sistema</h5>
+        <h5>Gytis, Šarūnas, Aurelijus © 2024 Advento Kalendorius Valdymo Sistema</h5>
       </footer>
     </>
   );
