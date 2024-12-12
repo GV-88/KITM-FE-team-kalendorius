@@ -1,4 +1,4 @@
-import { SET_LOADING, SET_TIPS, OPEN_DAY } from "../actions/actions"; // Pridėtas OPEN_DAY importas
+import { SET_LOADING, SET_TIPS, OPEN_DAY } from "../actions/actions";
 import React from "react";
 import { useContext, useEffect, useReducer } from "react";
 import reducer from "../reducers/reducer";
@@ -6,7 +6,7 @@ import reducer from "../reducers/reducer";
 const initialState = {
   isLoading: true,
   adventTips: [],
-  openDay: [], // Pridėta openDay savybė
+  openDay: [],
 };
 
 const JSON_LINK = "/src/adventTips.json";

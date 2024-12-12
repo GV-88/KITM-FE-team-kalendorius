@@ -1,7 +1,7 @@
 import { useGlobalContext } from "../../contexts/CalendarContext";
 import { useState, useEffect } from 'react';
 import { useThemeContext } from "../../contexts/ThemeContext";
-import { OPEN_DAY } from "../../actions/actions"; // Importuojame OPEN_DAY action tipą
+import { OPEN_DAY } from "../../actions/actions"; 
 
 // Import your icons here
 import icon1 from '../../assets/images/icon/1.png';
@@ -20,7 +20,7 @@ import icon12 from '../../assets/images/icon/12.png';
 const icons = [icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8, icon9, icon10, icon11, icon12];
 
 const Cards = () => {
-  const { isLoading, adventTips, openDay, dispatch } = useGlobalContext(); // Gauname dispatch funkciją
+  const { isLoading, adventTips, openDay, dispatch } = useGlobalContext(); 
   const [selectedAdvice, setSelectedAdvice] = useState(null);
   const [showPatienceMessage, setShowPatienceMessage] = useState({ day: null, timer: null });
   const [iconMap, setIconMap] = useState({});
@@ -39,7 +39,7 @@ const Cards = () => {
   const handleDayClick = (day, advice) => {
     if (!isFutureDay(day)) {
       if (!openDay.includes(day)) {
-        dispatch({ type: OPEN_DAY, payload: day }); // Naudojame dispatch su OPEN_DAY action
+        dispatch({ type: OPEN_DAY, payload: day });
       }
       setSelectedAdvice(advice ? { day, advice } : null);
     } else {
