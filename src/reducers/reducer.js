@@ -1,9 +1,9 @@
 import { SET_LOADING, SET_TIPS, SET_OPENED_DAYS, SET_OPEN_DAY } from "../actions/actions";
+import Storage from "../utilities/Storage";
 
 const reducer = (state, action) => {
   const storeOpenedDays = (days) => {
-    //TODO: save to browser storage
-    console.error("storeOpenedDays(days) not implemented yet");
+    Storage.setCalendarDaysOpened(days);
   };
 
   switch (action.type) {
@@ -33,6 +33,7 @@ const reducer = (state, action) => {
 
       if (Number.isInteger(day) && day <= new Date().getDate()) {
         newOpenedDays = Array.from(new Set(newOpenedDays).add(day)); //GV: using Set is a way to ensure unique elements in array
+        // Storage.addToCalendarDaysOpened(day);
         storeOpenedDays(newOpenedDays);
       }
       return { ...state, daysOpened: newOpenedDays, currentDayOpen: day };

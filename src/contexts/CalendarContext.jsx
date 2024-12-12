@@ -1,6 +1,7 @@
 import { SET_LOADING, SET_TIPS, SET_OPENED_DAYS, SET_OPEN_DAY } from "../actions/actions";
 import { createContext, useContext, useEffect, useReducer } from "react";
 import reducer from "../reducers/reducer";
+import Storage from "../utilities/Storage";
 
 const initialState = {
   isLoading: true,
@@ -40,7 +41,16 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  //TODO: retrieve daysOpened from browser storage and dispatch SET_OPENED_DAYS
+  const loadOpenedDaysFromStorage = async () => {
+    const daysOpened = await Storage.getCalendarDaysOpened();
+    if (daysOpened) {
+      dispatch({ type: SET_OPENED_DAYS, payload: { daysOpened: daysOpened } });
+    }
+  };
+
+  useEffect(() => {
+    loadOpenedDaysFromStorage();
+  }, []);
 
   useEffect(() => {
     fetchStories(JSON_LINK);
