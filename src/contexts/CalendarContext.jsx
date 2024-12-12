@@ -10,7 +10,7 @@ const initialState = {
   currentDayOpen: null,
 };
 
-const JSON_LINK = "/src/adventTips.json";
+const JSON_LINK = "adventTips.json";
 
 const AppContext = createContext();
 
