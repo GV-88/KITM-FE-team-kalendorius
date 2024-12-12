@@ -31,7 +31,7 @@ const reducer = (state, action) => {
       let newOpenedDays = state.daysOpened;
       const day = action.payload.day;
 
-      if (Number.isInteger(day)) {
+      if (Number.isInteger(day) && day <= new Date().getDate()) {
         newOpenedDays = Array.from(new Set(newOpenedDays).add(day)); //GV: using Set is a way to ensure unique elements in array
         storeOpenedDays(newOpenedDays);
       }
